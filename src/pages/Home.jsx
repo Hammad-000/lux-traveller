@@ -21,35 +21,40 @@ function TravelLandingPage() {
           
         </video>
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4">
-          <motion.h1
+          <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
-            style={{ y }}  // Applied the parallax transform here
-            className="text-5xl md:text-7xl font-bold mb-4"
+            style={{ y }}
+            className="flex flex-col items-center justify-center"
           >
-            Explore the World
-          </motion.h1>
+            <div className="text-2xl md:text-5xl font-bold mb-4 flex items-center justify-center gap-2 flex-wrap">
+              <span>Explore the World</span>
+              <span className="inline-block">
+                <video
+                  className="w-20 h-12 md:w-32 md:h-20 object-cover rounded"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                >
+                  <source src="/video/main.mp4" type="video/mp4" />
+                </video>
+              </span>
+            </div>
+            <div className="text-2xl md:text-5xl font-bold">
+              with  Lux Traveller
+            </div>
+          </motion.div>
+          
           <motion.p
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.5 }}
-            className="text-xl md:text-2xl mb-8"
+            className="text-xl md:text-2xl mb-8 mt-4"
           >
             Discover breathtaking destinations and create unforgettable memories.
           </motion.p>
-          
-          {/* Search Bar */}
-          {/* <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, delay: 1 }}
-            className="bg-white rounded-lg p-4 shadow-lg flex flex-col md:flex-row gap-4 w-full max-w-2xl"
-          >
-            <input type="text" placeholder="Where to?" className="flex-1 p-2 border rounded" />
-            <input type="date" className="flex-1 p-2 border rounded" />
-            <button className="bg-blue-600  px-6 py-2 rounded hover:bg-blue-700 transition">Search</button>
-          </motion.div> */}
         </div>
       </section>
 
@@ -59,8 +64,8 @@ function TravelLandingPage() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {[
 
-            { name: "Shangrila, Gilgit", img: "https://unsplash.com/photos/a-scenic-view-of-a-lake-surrounded-by-mountains-Y5kB_QFQCRY" },  // Fixed: Direct image URL
             { name: "Tokyo, Japan", img: "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?ixlib=rb-4.0.3&auto=format&fit=crop&w=2071&q=80" },
+            { name: "Shangrila, Gilgit", img: "https://images.unsplash.com/photo-1679951124125-50cc4029d727?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D  " },  
             { name: "Bali, Indonesia", img: "https://images.unsplash.com/photo-1537953773345-d172ccf13cf1?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" },
           ].map((dest, index) => (
             <motion.div
@@ -125,15 +130,7 @@ function TravelLandingPage() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-gray-800 text-white py-8 px-4">
-        <div className="max-w-6xl mx-auto text-center">
-          <h3 className="text-2xl font-bold mb-4">Ready to Travel?</h3>
-          <p className="mb-4">Join thousands of happy travelers. Start your adventure today!</p>
-          <button className="bg-blue-600 px-6 py-2 rounded hover:bg-blue-700 transition">Get Started</button>
-          <p className="mt-8 text-sm">© 2023 TravelCo. All rights reserved.</p>
-        </div>
-      </footer>
+    
     </div>
   );
 }
