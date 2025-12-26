@@ -79,11 +79,11 @@ function Home() {
     
       <section className="relative h-screen overflow-hidden">
         
-        <div className="absolute inset-0 transition-all duration-1000 ease-in-out">
+        <div className="absolute inset-0 transition-all duration-3000 ease-in-out">
           {destinationSlides.map((slide, index) => (
             <div
               key={index}
-              className={`absolute inset-0 transition-opacity duration-1000 ${
+              className={`absolute inset-0 transition-opacity duration-3000 ${
                 index === currentSlide ? "opacity-100" : "opacity-0"
               }`}
             >
@@ -168,9 +168,9 @@ function Home() {
               key={currentSlide}
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
-              className="text-lg font-medium bg-black/30 backdrop-blur-sm px-6 py-2 rounded-lg"
+              className="text-lg font-medium bg-black/30 backdrop-blur-sm   px-6 py-2 rounded-lg"
             >
-               <span className="font-bold">{destinationSlides[currentSlide].name}</span>
+               <span className=" pb-3.5">{destinationSlides[currentSlide].name}</span>
             </motion.div>
           </motion.div>
         </div>

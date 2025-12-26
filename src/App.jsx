@@ -14,7 +14,7 @@ function App() {
       <Router>
       <div className=''>
         {/* Redesigned Navigation Bar */}
-        <nav className='bg-gradient-to-r from-blue-600 to-blue-800 shadow-lg'>
+        <nav className='bg-gradient-to-r from-pink-600 to-blue-800 shadow-lg'>
           <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
             <div className='flex justify-center items-center h-16'>
               <div className='flex space-x-4 md:space-x-8'>
@@ -23,7 +23,7 @@ function App() {
                   className={({ isActive }) =>
                     `px-4 py-2 rounded-md text-sm font-medium transition duration-300 ease-in-out ${
                       isActive
-                        ? 'bg-white text-blue-600 shadow-md'
+                        ? 'bg-white text-purple-600 shadow-md'
                         : 'text-white hover:bg-blue-500 hover:text-white'
                     }`
                   }
