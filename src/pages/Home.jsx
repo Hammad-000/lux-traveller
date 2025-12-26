@@ -70,9 +70,9 @@ function Home() {
     setCurrentSlide((prev) => (prev - 1 + destinationSlides.length) % destinationSlides.length);
   };
 
-  const goToSlide = (index) => {
-    setCurrentSlide(index);
-  };
+  // const goToSlide = (index) => {
+  //   setCurrentSlide(index);
+  // };
 
   return (
     <div className="min-h-screen bg-gray-50">
