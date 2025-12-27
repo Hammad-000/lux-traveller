@@ -15,23 +15,67 @@ import {
   Heart
 } from 'lucide-react';
 
- function Benefits() {
+function Benefits() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
+      
       {/* Hero Section */}
       <div className="relative bg-gradient-to-r from-blue-600 to-teal-500 text-white py-16 md:py-24">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Our Benefits</h1>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Get 25% Off</h1>
           <p className="text-xl md:text-2xl opacity-90 max-w-3xl mx-auto">
-            Discover a world of exclusive privileges with Premium Travel Club
+            Get 25% off on your next booking when you use our affiliated hotels. This exclusive offer is available for Premium Travel Club members and includes select destinations worldwide. Book now and save big on luxury accommodations, with discounts applied at checkout for stays of up to 7 nights. Subject to availability and terms apply.
           </p>
         </div>
       </div>
 
       <div className="container mx-auto px-4 py-12 md:py-16 max-w-6xl">
-        {/* Main Content */}
+        {/* New Travel Offers Section */}
+        <div className="mb-16">
+          <h2 className="text-3xl font-bold text-gray-800 text-center mb-12">Exclusive Travel Offers</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              {
+                city: "Skardu, Pakistan",
+                image: "https://via.placeholder.com/400x300?text=Skardu+Pakistan",
+                description: "Experience the breathtaking beauty of Skardu with stunning mountains and serene lakes."
+              },
+              {
+                city: "Dubai, UAE",
+                image: "https://via.placeholder.com/400x300?text=Dubai+UAE",
+                description: "Dive into luxury and adventure in the vibrant city of Dubai, from skyscrapers to desert safaris."
+              },
+              {
+                city: "New York, America",
+                image: "https://via.placeholder.com/400x300?text=New+York+America",
+                description: "Explore the bustling streets of New York City, the city that never sleeps."
+              },
+              {
+                city: "Tokyo, Japan",
+                image: "https://via.placeholder.com/400x300?text=Tokyo+Japan",
+                description: "Immerse yourself in the blend of tradition and modernity in Tokyo."
+              }
+            ].map((offer, index) => (
+              <div 
+                key={index} 
+                className="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
+              >
+                <img src={offer.image} alt={offer.city} className="w-full h-48 object-cover" />
+                <div className="p-6">
+                  <div className="bg-red-500 text-white text-sm font-bold px-3 py-1 rounded-full inline-block mb-4">
+                    25% OFF
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-800 mb-3">{offer.city}</h3>
+                  <p className="text-gray-600 text-sm mb-4">{offer.description}</p>
+                  <p className="text-gray-500 text-xs">Book with our affiliated hotels to enjoy this exclusive discount. Valid for stays up to 7 nights, subject to availability.</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
         <div className="grid lg:grid-cols-2 gap-12 mb-16">
-          {/* Left Column - Experience Description */}
+          
           <div className="space-y-8">
             <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
               <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-100 rounded-xl mb-6">
@@ -56,7 +100,7 @@ import {
               </p>
             </div>
 
-            {/* Stats Section */}
+   
             <div className="grid grid-cols-2 gap-4">
               <div className="bg-gradient-to-br from-blue-500 to-teal-400 text-white rounded-xl p-6 text-center">
                 <div className="text-3xl font-bold mb-2">18+</div>
@@ -69,7 +113,6 @@ import {
             </div>
           </div>
 
-          {/* Right Column - Exclusive Benefits */}
           <div>
             <div className="mb-8">
               <h2 className="text-3xl font-bold text-gray-800 mb-2">Our Exclusive Benefits</h2>
@@ -130,7 +173,6 @@ import {
           </div>
         </div>
 
-        {/* Additional Features */}
         <div className="mb-16">
           <h2 className="text-3xl font-bold text-gray-800 text-center mb-12">Premium Features</h2>
           <div className="grid md:grid-cols-3 gap-8">
@@ -158,7 +200,7 @@ import {
           </div>
         </div>
 
-        {/* CTA Section */}
+        
         <div className="bg-gradient-to-r from-blue-600 to-teal-500 rounded-2xl p-8 md:p-12 text-white text-center">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-3xl font-bold mb-6">Ready to Experience Premium Benefits?</h2>
@@ -184,5 +226,4 @@ import {
   );
 }
 
-
-export default Benefits
+export default Benefits;

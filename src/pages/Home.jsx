@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { desc } from "motion/react-m";
 
 function Home() {
   const { scrollYProgress } = useScroll();
   const y = useTransform(scrollYProgress, [0, 0.5], [0, -100]);
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  // Destination slides data
   const destinationSlides = [
     { 
       name: "Tokyo, Japan", 
@@ -141,7 +139,7 @@ function Home() {
           <motion.p
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.5 }}
+            transition={{ duration: 1, delay: 0.3}}
             className="text-xl md:text-3xl mb-8 mt-4 max-w-4xl leading-relaxed"
           >
             
@@ -181,12 +179,8 @@ function Home() {
         <h2 className="text-4xl font-bold text-center mb-12">Popular Destinations</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {destinationSlides.map((dest, index) => (
-            <motion.div
+            <div
               key={index}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 3, delay: index * 0.1 }}
-              whileHover={{ scale: 1.05, y: -10 }}
               className="bg-white rounded-xl shadow-lg overflow-hidden group cursor-pointer"
             >
               <div className="relative overflow-hidden h-64">
@@ -204,7 +198,7 @@ function Home() {
                   Learn More
                 </button>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </section>
