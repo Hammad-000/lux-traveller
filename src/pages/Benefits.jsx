@@ -37,22 +37,22 @@ function Benefits() {
             {[
               {
                 city: "Skardu, Pakistan",
-                image: "https://via.placeholder.com/400x300?text=Skardu+Pakistan",
+                image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Shangrila_resort_skardu.jpg/1200px-Shangrila_resort_skardu.jpg",
                 description: "Experience the breathtaking beauty of Skardu with stunning mountains and serene lakes."
               },
               {
                 city: "Dubai, UAE",
-                image: "https://via.placeholder.com/400x300?text=Dubai+UAE",
+                image: "https://t4.ftcdn.net/jpg/03/81/67/75/360_F_381677568_eZaX7u05HIszMcZTTJbfCk0tFoizziFU.jpg",
                 description: "Dive into luxury and adventure in the vibrant city of Dubai, from skyscrapers to desert safaris."
               },
               {
                 city: "New York, America",
-                image: "https://via.placeholder.com/400x300?text=New+York+America",
+                image: "https://res.cloudinary.com/shipit-cdn/images/c_scale,w_448,h_299,dpr_2/f_auto,q_auto/v1733410609/wordpress/new-york/new-york.jpg?_i=AA",
                 description: "Explore the bustling streets of New York City, the city that never sleeps."
               },
               {
                 city: "Tokyo, Japan",
-                image: "https://via.placeholder.com/400x300?text=Tokyo+Japan",
+                image: "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?ixlib=rb-4.0.3&auto=format&fit=crop&w=2071&q=80",
                 description: "Immerse yourself in the blend of tradition and modernity in Tokyo."
               }
             ].map((offer, index) => (

@@ -36,7 +36,6 @@ function Footer() {
   const destinations = [
     { city: "Skardu, Pakistan", address: "Mountain paradise with stunning views", phone: "+92 311 0250787", hours: "24/7 Support" },
     { city: "Dubai, UAE", address: "Luxury city with modern attractions", phone: "+971 50 123 4567", hours: "24/7 Support" },
-    { city: "New York, USA", address: "The city that never sleeps", phone: "+1 212 555 1234", hours: "24/7 Support" },
     { city: "Tokyo, Japan", address: "Blend of tradition and innovation", phone: "+81 3 1234 5678", hours: "24/7 Support" }
   ];
 
@@ -136,7 +135,7 @@ function Footer() {
               <span className="w-8 h-1 bg-gradient-to-r from-pink-600 to-blue-800 rounded-full"></span>
               Popular Destinations
             </h3>
-            <div className="space-y-4">
+            <div className="space-y-3">
               {destinations.map((destination, index) => (
                 <div 
                   key={index}
@@ -181,51 +180,55 @@ function Footer() {
               <span className="w-8 h-1 bg-gradient-to-r from-pink-600 to-blue-800 rounded-full"></span>
               Contact Us
             </h3>
-            
             <div className="space-y-4 mb-8">
-              <a 
-                href="tel:+923110250787"
-                className="flex items-center gap-4 p-4 bg-gray-800/30 rounded-xl hover:bg-gray-800/50 transition-all duration-300 group"
-              >
-                <div className="w-12 h-12 bg-gradient-to-br from-pink-600/20 to-blue-800/20 rounded-full flex items-center justify-center group-hover:from-pink-600 group-hover:to-blue-800 transition-all">
-                  <FaPhone className="text-pink-400 group-hover:text-white" />
-                </div>
-                <div>
-                  <p className="text-sm text-gray-400">Call Us Anytime</p>
-                  <p className="font-semibold text-lg group-hover:text-pink-300 transition-colors">
-                    +92 311 0250787
-                  </p>
-                </div>
-              </a>
+  {/* Phone Card */}
+  <a 
+    href="tel:+923110250787"
+    className="flex items-center gap-4 p-4 bg-gray-800/30 rounded-xl hover:bg-gray-800/50 transition-all duration-300 group"
+  >
+    <div className="w-12 h-12 bg-gradient-to-br from-pink-600/20 to-blue-800/20 rounded-full flex items-center justify-center group-hover:from-pink-600 group-hover:to-blue-800 transition-all">
+      <FaPhone className="text-pink-400 group-hover:text-white" />
+    </div>
+    <div>
+      <p className="text-sm text-gray-400">Call Us Anytime</p>
+      <p className="font-semibold text-lg group-hover:text-pink-300 transition-colors">
+        +92 311 0250787
+      </p>
+    </div>
+  </a>
 
-              <a 
-                href="mailto:luxtravelclub@gmail.com"
-                className="flex items-center gap-4 p-4 bg-gray-800/30 rounded-xl hover:bg-gray-800/50 transition-all duration-300 group"
-              >
-                <div className="w-12 h-12 bg-gradient-to-br from-pink-600/20 to-blue-800/20 rounded-full flex items-center justify-center group-hover:from-pink-600 group-hover:to-blue-800 transition-all">
-                  <FaEnvelope className="text-pink-400 group-hover:text-white" />
-                </div>
-                <div>
-                  <p className="text-sm text-gray-400">Email Us</p>
-                  <p className="font-semibold text-lg group-hover:text-pink-300 transition-colors">
-                    luxtravelclub@gmail.com
-                  </p>
-                </div>
-              </a>
+  {/* Email Card */}
+  <a 
+    href="mailto:luxtravelclub@gmail.com"
+    className="flex items-center gap-4 p-4 bg-gray-800/30 rounded-xl hover:bg-gray-800/50 transition-all duration-300 group"
+  >
+    <div className="w-12 h-12 bg-gradient-to-br from-pink-600/20 to-blue-800/20 rounded-full flex items-center justify-center group-hover:from-pink-600 group-hover:to-blue-800 transition-all">
+      <FaEnvelope className="text-pink-400 group-hover:text-white" />
+    </div>
+    <div>
+      <p className="text-sm text-gray-400">Email Us</p>
+      <p className="font-semibold text-lg group-hover:text-pink-300 transition-colors">
+        luxtravel@gmail.com
+      </p>
+    </div>
+  </a>
 
-              <div className="flex items-center gap-4 p-4 bg-gray-800/30 rounded-xl">
-                <div className="w-12 h-12 bg-gradient-to-br from-pink-600/20 to-blue-800/20 rounded-full flex items-center justify-center">
-                  <FaMapMarkerAlt className="text-pink-400" />
-                </div>
-                <div>
-                  <p className="text-sm text-gray-400">Head Office</p>
-                  <p className="font-semibold">
-                    11/56 Block B, Area 51<br />
-                    <span className="text-sm text-gray-400">Karachi, Pakistan</span>
-                  </p>
-                </div>
-              </div>
-            </div>
+  {/* Location Card - Fixed */}
+  <div className="flex items-center gap-4 p-4 bg-gray-800/30 rounded-xl hover:bg-gray-800/50 transition-all duration-300 group">
+    <div className="w-12 h-12 bg-gradient-to-br from-pink-600/20 to-blue-800/20 rounded-full flex items-center justify-center group-hover:from-pink-600 group-hover:to-blue-800 transition-all">
+      <FaMapMarkerAlt className="text-pink-400 group-hover:text-white" />
+    </div>
+    <div>
+      <p className="text-sm text-gray-400">Head Office</p>
+      <p className="font-semibold text-lg group-hover:text-pink-300 transition-colors">
+        11/56 Block B, Area 51
+      </p>
+      <p className="text-sm text-gray-400 group-hover:text-gray-300 transition-colors">
+        Karachi, Pakistan
+      </p>
+    </div>
+  </div>
+</div>
 
             {/* Social Media */}
             <div>

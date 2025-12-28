@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform,  } from "framer-motion";
+import {Plane, } from "lucide-react"
 
 function Home() {
   const { scrollYProgress } = useScroll();
@@ -77,7 +78,7 @@ function Home() {
     
       <section className="relative h-screen overflow-hidden">
         
-        <div className="absolute inset-0 transition-all duration-3000 ease-in-out">
+        <div className="absolute inset-0 transition-all duration-5000 ease-in-out">
           {destinationSlides.map((slide, index) => (
             <div
               key={index}
@@ -86,11 +87,12 @@ function Home() {
               }`}
             >
               <div
-                className="absolute inset-0 bg-cover bg-center"
+                className="absolute inset-0  bg-center"
                 style={{
                   backgroundImage: `url(${slide.img})`,
                   backgroundSize: "cover",
                   backgroundPosition: "center",
+                  backgroundRepeat: "no-repeat"
                 }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent" />
@@ -277,28 +279,20 @@ function Home() {
           ))}
         </div>
       </section>
-
+   
       
-      <section className="bg-gradient-to-r from-blue-600 to-purple-600 py-16 px-4">
-        <div className="max-w-4xl mx-auto text-center text-white">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <h2 className="text-4xl font-bold mb-6">Ready for Your Next Adventure?</h2>
-            <p className="text-xl mb-8 max-w-2xl mx-auto">
-              Join thousands of satisfied travelers and start planning your dream vacation today.
-            </p>
-            <button className="bg-white text-blue-600 px-10 py-4 rounded-full text-lg font-bold hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105">
-              Book Now
-            </button>
-            <p className="mt-6 text-white/80">
-              Limited time offer: Get 15% off your first booking with code: <strong>LUX15</strong>
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      
+     <div className=" bottom-5 left-0 right-0 mb-4">
+                <div className="animate-bounce flex justify-center ">
+                    <motion.div className="w-16 h-16 bg-gradient-to-r from-pink-600 to-blue-800 rounded-full flex items-center justify-center shadow-lg"
+             
+
+                    >
+                          <Plane className="w-8 h-8 text-white  transform -rotate-45 space-x-10   " />
+                    </motion.div>
+                </div>
+            </div>
+
     </div>
   );
 }
