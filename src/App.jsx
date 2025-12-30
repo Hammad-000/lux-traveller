@@ -78,7 +78,7 @@ function App() {
               {/* Desktop Join Button */}
               <div className="hidden md:block">
                 <NavLink
-                  to="/join"
+                  to="/contact"
                   className="relative overflow-hidden bg-gradient-to-r from-pink-600 to-blue-800 text-white px-6 py-2.5 rounded-lg text-sm font-bold transition-all duration-300 hover:from-pink-700 hover:to-blue-900 hover:shadow-lg hover:-translate-y-0.5 group"
                 >
                   <span className="relative z-10">Join Now</span>
@@ -156,7 +156,7 @@ function App() {
               {/* Mobile Join Button */}
               <div className="px-3 pt-4 pb-2">
                 <NavLink
-                  to="/join"
+                  to="/contact"
                   onClick={closeMenu}
                   className="block w-full text-center bg-gradient-to-r from-pink-600 to-blue-800 text-white px-4 py-3.5 rounded-lg text-base font-bold hover:from-pink-700 hover:to-blue-900 transition-all duration-300 hover:shadow-lg"
                 >
