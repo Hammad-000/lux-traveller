@@ -28,7 +28,7 @@ function Premium() {
               <h3 className="text-3xl font-bold">Business Class</h3>
             </div>
             
-            <div className="space-y-4 mb-8">
+            <div className="space-y-4 mb-6">
               <div className="flex items-center">
                 <div className="w-2 h-2 bg-pink-500 rounded-full mr-3"></div>
                 <p className="text-gray-300">Priority check-in and boarding</p>
@@ -49,6 +49,15 @@ function Premium() {
                 <div className="w-2 h-2 bg-pink-500 rounded-full mr-3"></div>
                 <p className="text-gray-300">Lie-flat seats</p>
               </div>
+            </div>
+
+            {/* Business Class Image */}
+            <div className="mb-6">
+              <img 
+                className="w-full h-48 object-cover rounded-xl"
+                src="https://c.ekstatic.net/ecl/aircraft-interior/business-class/a350/the-emirates-a350-business-class-w768x480.jpg?h=SeZX1PNmRBWVYeCwMrgx2A" 
+                alt="Business Class cabin with spacious lie-flat seats" 
+              />
             </div>
 
             <div className="flex justify-between items-center">
@@ -74,7 +83,7 @@ function Premium() {
               <h3 className="text-3xl font-bold">First Class</h3>
             </div>
             
-            <div className="space-y-4 mb-8">
+            <div className="space-y-4 mb-6">
               <div className="flex items-center">
                 <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
                 <p className="text-gray-300">Private suites with doors</p>
@@ -95,6 +104,15 @@ function Premium() {
                 <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
                 <p className="text-gray-300">Chauffeur service</p>
               </div>
+            </div>
+
+            {/* First Class Image */}
+            <div className="mb-6">
+              <img 
+                className="w-full h-48 object-cover rounded-xl"
+                src="https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/02/16/11/first-class-main-suites-02.jpg?quality=75&width=1368&crop=3%3A2%2Csmart&auto=webp" 
+                alt="First Class private suite with luxurious amenities" 
+              />
             </div>
 
             <div className="flex justify-between items-center">
