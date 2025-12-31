@@ -63,13 +63,13 @@ function Premium() {
             <div className="flex justify-between items-center">
               <div>
                 <p className="text-sm text-gray-400">Starting from</p>
-                <p className="text-2xl font-bold">$2,500</p>
+                <p className="text-2xl font-bold">$5000</p>
               </div>
               <NavLink
-                to="/business-class"
+                to="/contact"
                 className="px-6 py-3 rounded-lg bg-gradient-to-r from-pink-600 to-pink-800 text-white font-bold transition-all duration-300 hover:from-pink-700 hover:to-pink-900 hover:shadow-lg"
               >
-                View Details
+                Book Now
               </NavLink>
             </div>
           </div>
@@ -118,13 +118,14 @@ function Premium() {
             <div className="flex justify-between items-center">
               <div>
                 <p className="text-sm text-gray-400">Starting from</p>
-                <p className="text-2xl font-bold">$6,000</p>
+                <p className="text-2xl font-bold">$14,000</p>
+                
               </div>
-              <NavLink
-                to="/first-class"
-                className="px-6 py-3 rounded-lg bg-gradient-to-r from-blue-600 to-blue-800 text-white font-bold transition-all duration-300 hover:from-blue-700 hover:to-blue-900 hover:shadow-lg"
+               <NavLink
+                to="/contact"
+                className="px-6 py-3 rounded-lg bg-gradient-to-r from-pink-600 to-pink-800 text-white font-bold transition-all duration-300 hover:from-pink-700 hover:to-pink-900 hover:shadow-lg"
               >
-                View Details
+                Book Now 👑
               </NavLink>
             </div>
           </div>

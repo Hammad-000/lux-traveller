@@ -17,13 +17,13 @@ function App() {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const closeMenu = () => setIsMenuOpen(false);
 
-  const navItems = [
-    { to: "/home", label: "Home" },
-    { to: "/about", label: "About" },
-    { to: "/benefits", label: "Benefits" },
-    { to: "/contact", label: "Contact" },
-    { to: "/premium", label: "Premium" }
-  ];
+const navItems = [
+  { to: "/home", label: "Home" },
+  { to: "/about", label: "About" },
+  { to: "/benefits", label: "Benefits" },
+  { to: "/contact", label: "Contact" },
+  { to: "/premium", label: <span className="flex gap-1 items-center"><span className=" mb-2 text-2xl">👑</span> Premium </span> }
+];
 
   return (
     <Router>
@@ -58,12 +58,12 @@ function App() {
                     key={item.to}
                     to={item.to}
                     className={({ isActive }) =>
-                      `relative px-6 py-2.5 text-sm font-medium transition-all duration-300 group`
+                      `relative px-6 py-3  text-sm font-medium items-center transition-all duration-300 group`
                     }
                   >
                     {({ isActive }) => (
                       <>
-                        <span className={`relative z-10 ${isActive ? 'text-white' : 'text-gray-300 group-hover:text-white'}`}>
+                        <span className={`relative justify-center z-10 ${isActive ? 'text-white' : 'text-gray-300 group-hover:text-white'}`}>
                           {item.label}
                         </span>
                         {isActive && (
