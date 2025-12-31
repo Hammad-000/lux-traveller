@@ -8,7 +8,7 @@ import Footer from './components/Footer';
 import './index.css';
 import { useState } from 'react';
 import { Menu, X, Plane, Import } from 'lucide-react';
-import Firstclass from './pages/Firstclass';
+import Premium from './pages/Premium';
 
 
 function App() {
@@ -22,7 +22,7 @@ function App() {
     { to: "/about", label: "About" },
     { to: "/benefits", label: "Benefits" },
     { to: "/contact", label: "Contact" },
-    { to: "/firstclass", label: "First Class" }
+    { to: "/premium", label: "Premium" }
   ];
 
   return (
@@ -199,7 +199,7 @@ function App() {
             <Route path="/" element={<Navigate to="/home" />} />
             <Route path="/home" element={<Home />} />
             <Route path="/benefits" element={<Benefits />} />
-            <Route path="/firstclass" element={<Firstclass />} />
+            <Route path="/premium" element={<Premium />} />
 
             <Route path="*" element={<Error />} />
           </Routes>
