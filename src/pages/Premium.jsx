@@ -5,15 +5,29 @@ function Premium() {
   return (
     <div className="min-h-screen bg-gray-900 text-white py-12 px-4">
       <div className="max-w-7xl mx-auto">
-        {/* Header */}
-        <div className="text-center m-10">
-          <h2 className="text-5xl font-bold p-6 bg-gradient-to-r from-pink-500 to-blue-500 bg-clip-text text-transparent">
-            Premium Experience
-          </h2>
-          <p className="text-xl text-gray-300  max-w-3xl mx-auto">
-            Experience unparalleled luxury and comfort with our exclusive travel classes. 
-            From spacious seating to gourmet dining, we redefine premium travel.
-          </p>
+        {/* Header with Image Background */}
+        <div className="relative rounded-2xl overflow-hidden mb-16">
+          {/* Background Image */}
+          <div 
+            className="absolute inset-0 bg-cover bg-center"
+            style={{ 
+              backgroundImage: 'url("https://images5.alphacoders.com/123/1238802.jpg")' 
+            }}
+          />
+          
+          {/* Dark Overlay for better text readability */}
+          <div className="absolute inset-0 bg-black/50" />
+          
+          {/* Content Overlay */}
+          <div className="relative z-10 mt-20 text-center p-12 md:p-16 lg:p-20">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-20 bg-gradient-to-r from-pink-500 to-blue-500 bg-clip-text text-transparent">
+              Premium Experience
+            </h2>
+            <p className="text-lg md:text-xl lg:text-2xl text-gray-200 max-w-3xl mx-auto leading-relaxed">
+              Experience unparalleled luxury and comfort with our exclusive travel classes. 
+              From spacious seating to gourmet dining, we redefine premium travel.
+            </p>
+          </div>
         </div>
 
         {/* Class Cards Grid */}
