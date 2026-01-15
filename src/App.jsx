@@ -28,14 +28,13 @@ const navItems = [
   return (
     <Router>
       <div className="min-h-screen flex flex-col">
-        {/* Updated Navigation */}
+
         <nav className="bg-gradient-to-b from-gray-900 via-gray-800 to-black text-white shadow-xl sticky top-0 z-50 border-b border-gray-700">
-          {/* Top Gradient Border */}
+
           <div className="w-full h-1 bg-gradient-to-r from-pink-600 to-blue-800"></div>
           
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center h-16">
-              {/* Brand Logo - Updated to match footer */}
               <div className="flex-shrink-0">
                 <NavLink to="/" onClick={closeMenu} className="flex items-center space-x-3">
                   <div className="w-12 h-12 bg-gradient-to-r from-pink-600 to-blue-800 rounded-lg flex items-center justify-center shadow-lg">
@@ -46,12 +45,10 @@ const navItems = [
                       <span className="text-2xl font-bold text-white">Lux</span>
                       <span className="text-2xl font-bold text-pink-400">Travel</span>
                     </div>
-                    <span className="text-xs text-gray-400 -mt-1">Club</span>
                   </div>
                 </NavLink>
               </div>
 
-              {/* Desktop Navigation */}
               <div className="hidden md:flex items-center space-x-1">
                 {navItems.map((item) => (
                   <NavLink
@@ -89,7 +86,6 @@ const navItems = [
                 </NavLink>
               </div>
 
-              {/* Mobile Menu Button */}
               <div className="md:hidden">
                 <button
                   onClick={toggleMenu}
@@ -107,7 +103,6 @@ const navItems = [
             </div>
           </div>
 
-          {/* Mobile Menu */}
           <div className={`md:hidden transition-all duration-300 ease-in-out ${
             isMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0 overflow-hidden'
           }`}>
@@ -128,7 +123,6 @@ const navItems = [
                 </NavLink>
               </div>
 
-              {/* Mobile Navigation Items */}
               {navItems.map((item) => (
                 <NavLink
                   key={item.to}
@@ -156,7 +150,6 @@ const navItems = [
                 </NavLink>
               ))}
               
-              {/* Mobile Join Button */}
               <div className="px-3 pt-4 pb-2">
                 <NavLink
                   to="/contact"
@@ -167,7 +160,6 @@ const navItems = [
                 </NavLink>
               </div>
 
-              {/* Mobile Contact Info */}
               <div className="px-3 pt-4 mt-4 border-t border-gray-800">
                 <div className="text-sm text-gray-400 space-y-2">
                   <div className="flex items-center gap-2">
