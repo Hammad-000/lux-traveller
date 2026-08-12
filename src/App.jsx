@@ -7,9 +7,8 @@ import Benefits from './pages/Benefits';
 import Footer from './components/Footer';
 import './index.css';
 import { useState } from 'react';
-import { Menu, X, Plane, Import } from 'lucide-react';
+import { Menu, X, Plane, Sparkles, Phone, Mail } from 'lucide-react';
 import Premium from './pages/Premium';
-
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -17,59 +16,68 @@ function App() {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const closeMenu = () => setIsMenuOpen(false);
 
-const navItems = [
-  { to: "/home", label: "Home" },
-  { to: "/about", label: "About" },
-  { to: "/benefits", label: "Benefits" },
-  { to: "/contact", label: "Contact" },
-  { to: "/premium", label: <span className="flex gap-1 items-center"><span className=" mb-2 text-2xl">👑</span> Premium </span> }
-];
+  const navItems = [
+    { to: "/home", label: "Home" },
+    { to: "/about", label: "About" },
+    { to: "/benefits", label: "Benefits" },
+    { to: "/contact", label: "Contact" },
+    { 
+      to: "/premium", 
+      label: (
+        <span className="flex items-center gap-1.5 text-amber-400 font-semibold">
+          <Sparkles className="w-4 h-4 animate-pulse" />
+          <span>Premium</span>
+        </span>
+      ) 
+    }
+  ];
 
   return (
     <Router>
-      <div className="min-h-screen flex flex-col">
+      <div className="min-h-screen flex flex-col bg-slate-950 text-white font-sans selection:bg-pink-500 selection:text-white">
 
-        <nav className="bg-gradient-to-b from-gray-900 via-gray-800 to-black text-white shadow-xl sticky top-0 z-50 border-b border-gray-700">
-
-          <div className="w-full h-1 bg-gradient-to-r from-pink-600 to-blue-800"></div>
+        {/* Modern Glassmorphic Sticky Navbar */}
+        <nav className="bg-slate-950/80 backdrop-blur-xl text-white sticky top-0 z-50 border-b border-white/10 shadow-2xl">
+          
+          {/* Top Neon Accent Line */}
+          <div className="w-full h-[2px] bg-gradient-to-r from-pink-500 via-purple-500 to-blue-600"></div>
           
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex justify-between items-center h-16">
+            <div className="flex justify-between items-center h-20">
+              
+              {/* Brand Logo */}
               <div className="flex-shrink-0">
-                <NavLink to="/" onClick={closeMenu} className="flex items-center space-x-3">
-                  <div className="w-12 h-12 bg-gradient-to-r from-pink-600 to-blue-800 rounded-lg flex items-center justify-center shadow-lg">
-                    <Plane className="text-white h-6 w-6" />
+                <NavLink to="/" onClick={closeMenu} className="flex items-center space-x-3 group">
+                  <div className="w-11 h-11 bg-gradient-to-br from-pink-600 to-blue-600 rounded-2xl flex items-center justify-center shadow-lg shadow-pink-600/20 group-hover:scale-105 transition-transform duration-300 border border-white/20">
+                    <Plane className="text-white h-5 w-5 transform -rotate-45 group-hover:rotate-0 transition-transform duration-500" />
                   </div>
                   <div className="flex flex-col">
                     <div className="flex items-baseline">
-                      <span className="text-2xl font-bold text-white">Lux</span>
-                      <span className="text-2xl font-bold text-pink-400">Travel</span>
+                      <span className="text-2xl font-black tracking-tight text-white">Lux</span>
+                      <span className="text-2xl font-black tracking-tight bg-gradient-to-r from-pink-400 to-blue-400 bg-clip-text text-transparent">Travel</span>
                     </div>
                   </div>
                 </NavLink>
               </div>
 
-              <div className="hidden md:flex items-center space-x-1">
+              {/* Desktop Nav Links */}
+              <div className="hidden md:flex items-center space-x-1 bg-white/[0.03] border border-white/10 p-1.5 rounded-2xl backdrop-blur-md shadow-inner">
                 {navItems.map((item) => (
                   <NavLink
                     key={item.to}
                     to={item.to}
                     className={({ isActive }) =>
-                      `relative px-6 py-3  text-sm font-medium items-center transition-all duration-300 group`
+                      `relative px-5 py-2.5 text-sm font-medium rounded-xl transition-all duration-300 flex items-center group ${
+                        isActive 
+                          ? 'text-white bg-white/10 shadow-lg border border-white/10' 
+                          : 'text-slate-400 hover:text-white hover:bg-white/5'
+                      }`
                     }
                   >
                     {({ isActive }) => (
-                      <>
-                        <span className={`relative justify-center z-10 ${isActive ? 'text-white' : 'text-gray-300 group-hover:text-white'}`}>
-                          {item.label}
-                        </span>
-                        {isActive && (
-                          <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-pink-600 to-blue-800 rounded-t-full"></div>
-                        )}
-                        <div className={`absolute inset-0 bg-gradient-to-r from-pink-600/10 to-blue-800/10 rounded-lg transition-opacity duration-300 ${
-                          isActive ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
-                        }`}></div>
-                      </>
+                      <span className="relative z-10 flex items-center">
+                        {item.label}
+                      </span>
                     )}
                   </NavLink>
                 ))}
@@ -79,22 +87,22 @@ const navItems = [
               <div className="hidden md:block">
                 <NavLink
                   to="/contact"
-                  className="relative overflow-hidden bg-gradient-to-r from-pink-600 to-blue-800 text-white px-6 py-2.5 rounded-lg text-sm font-bold transition-all duration-300 hover:from-pink-700 hover:to-blue-900 hover:shadow-lg hover:-translate-y-0.5 group"
+                  className="relative overflow-hidden bg-gradient-to-r from-pink-600 to-blue-600 text-white px-6 py-3 rounded-xl text-sm font-bold transition-all duration-300 hover:from-pink-500 hover:to-blue-500 hover:shadow-xl hover:shadow-pink-600/25 hover:-translate-y-0.5 border border-white/20 flex items-center gap-2 group"
                 >
                   <span className="relative z-10">Join Now</span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-pink-500 to-blue-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </NavLink>
               </div>
 
+              {/* Mobile Menu Toggle Button */}
               <div className="md:hidden">
                 <button
                   onClick={toggleMenu}
-                  className="inline-flex items-center justify-center p-2 rounded-lg text-white hover:bg-gray-800/50 focus:outline-none transition-all duration-300 border border-gray-700 hover:border-gray-600"
+                  className="inline-flex items-center justify-center p-2.5 rounded-xl text-slate-300 hover:text-white bg-white/5 hover:bg-white/10 focus:outline-none transition-all duration-300 border border-white/10"
                   aria-expanded={isMenuOpen}
                 >
                   <span className="sr-only">Open main menu</span>
                   {isMenuOpen ? (
-                    <X className="h-6 w-6" />
+                    <X className="h-6 w-6 text-pink-400" />
                   ) : (
                     <Menu className="h-6 w-6" />
                   )}
@@ -103,87 +111,69 @@ const navItems = [
             </div>
           </div>
 
-          <div className={`md:hidden transition-all duration-300 ease-in-out ${
-            isMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0 overflow-hidden'
+          {/* Mobile Dropdown Menu */}
+          <div className={`md:hidden transition-all duration-300 ease-in-out bg-slate-950/95 backdrop-blur-2xl border-b border-white/10 ${
+            isMenuOpen ? 'max-h-[600px] opacity-100 py-6 px-6' : 'max-h-0 opacity-0 overflow-hidden py-0 px-6'
           }`}>
-            <div className="px-4 pt-2 pb-4 space-y-1 bg-gradient-to-b from-gray-900 to-black border-t border-gray-800 shadow-inner">
-              {/* Mobile Brand */}
-              <div className="px-3 py-4 border-b border-gray-700 mb-2">
-                <NavLink to="/" onClick={closeMenu} className="flex items-center space-x-3">
-                  <div className="w-10 h-10 bg-gradient-to-r from-pink-600 to-blue-800 rounded-lg flex items-center justify-center">
-                    <Plane className="text-white h-5 w-5" />
-                  </div>
-                  <div className="flex flex-col">
-                    <div className="flex items-baseline">
-                      <span className="text-xl font-bold text-white">Lux</span>
-                      <span className="text-xl font-bold text-pink-400">Travel</span>
-                    </div>
-                    <span className="text-xs text-gray-400">Club</span>
-                  </div>
-                </NavLink>
-              </div>
-
+            <div className="space-y-3">
+              
+              {/* Mobile Navigation Links */}
               {navItems.map((item) => (
                 <NavLink
                   key={item.to}
                   to={item.to}
                   onClick={closeMenu}
                   className={({ isActive }) =>
-                    `flex items-center px-4 py-3.5 rounded-lg text-base font-medium transition-all duration-300 group ${
+                    `flex items-center justify-between px-4 py-3 rounded-xl text-base font-medium transition-all duration-300 ${
                       isActive 
-                        ? 'bg-gradient-to-r from-pink-600/20 to-blue-800/20 border-l-4 border-pink-500 text-white' 
-                        : 'text-gray-300 hover:bg-gray-800/50 hover:text-white'
+                        ? 'bg-gradient-to-r from-pink-600/20 to-blue-600/20 border border-white/20 text-white shadow-lg' 
+                        : 'text-slate-400 hover:bg-white/5 hover:text-white border border-transparent'
                     }`
                   }
                 >
                   {({ isActive }) => (
                     <>
-                      <div className={`w-2 h-2 rounded-full mr-3 ${
-                        isActive ? 'bg-gradient-to-r from-pink-600 to-blue-800' : 'bg-gray-600 group-hover:bg-pink-500'
-                      }`}></div>
                       <span>{item.label}</span>
                       {isActive && (
-                        <div className="ml-auto w-2 h-2 rounded-full bg-gradient-to-r from-pink-600 to-blue-800 animate-pulse"></div>
+                        <div className="w-2 h-2 rounded-full bg-pink-500 animate-ping"></div>
                       )}
                     </>
                   )}
                 </NavLink>
               ))}
               
-              <div className="px-3 pt-4 pb-2">
+              {/* Mobile Join Button */}
+              <div className="pt-2">
                 <NavLink
                   to="/contact"
                   onClick={closeMenu}
-                  className="block w-full text-center bg-gradient-to-r from-pink-600 to-blue-800 text-white px-4 py-3.5 rounded-lg text-base font-bold hover:from-pink-700 hover:to-blue-900 transition-all duration-300 hover:shadow-lg"
+                  className="block w-full text-center bg-gradient-to-r from-pink-600 to-blue-600 text-white px-4 py-3.5 rounded-xl text-base font-bold shadow-lg shadow-pink-600/20 transition-all duration-300 border border-white/20"
                 >
                   Join Now
                 </NavLink>
               </div>
 
-              <div className="px-3 pt-4 mt-4 border-t border-gray-800">
-                <div className="text-sm text-gray-400 space-y-2">
-                  <div className="flex items-center gap-2">
-                    <div className="w-8 h-8 bg-gradient-to-r from-pink-600/20 to-blue-800/20 rounded-full flex items-center justify-center">
-                      <svg className="w-4 h-4 text-pink-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                      </svg>
-                    </div>
-                    <span>+92 311 0250787</span>
+              {/* Mobile Contact Quick-Info */}
+              <div className="pt-4 mt-4 border-t border-white/10 space-y-2.5 text-sm text-slate-400">
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 bg-white/5 border border-white/10 rounded-lg flex items-center justify-center text-pink-400">
+                    <Phone className="w-4 h-4" />
                   </div>
-                  <div className="flex items-center gap-2">
-                    <div className="w-8 h-8 bg-gradient-to-r from-pink-600/20 to-blue-800/20 rounded-full flex items-center justify-center">
-                      <svg className="w-4 h-4 text-pink-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                      </svg>
-                    </div>
-                    <span>luxtravel@gmail.com</span>
+                  <span>+92 311 0250787</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 bg-white/5 border border-white/10 rounded-lg flex items-center justify-center text-blue-400">
+                    <Mail className="w-4 h-4" />
                   </div>
+                  <span>luxtravel@gmail.com</span>
                 </div>
               </div>
+
             </div>
           </div>
         </nav>
 
+        {/* Main Content Area */}
         <main className="flex-grow">
           <Routes>
             <Route path="/about" element={<About />} />
@@ -192,7 +182,6 @@ const navItems = [
             <Route path="/home" element={<Home />} />
             <Route path="/benefits" element={<Benefits />} />
             <Route path="/premium" element={<Premium />} />
-
             <Route path="*" element={<Error />} />
           </Routes>
         </main>
